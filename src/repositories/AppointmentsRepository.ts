@@ -6,6 +6,7 @@ interface CreateAppointmentDTO {
     date: Date;
 }
 
+// Função da rota e apenas receber a requisicao, chamar outro arquivo e devolver a resposta
 class AppointmentRepository {
     private appointments: Appointment[];
 
