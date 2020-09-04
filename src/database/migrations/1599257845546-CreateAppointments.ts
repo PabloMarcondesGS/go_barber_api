@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
 export default class CreateAppointments1599257845546
