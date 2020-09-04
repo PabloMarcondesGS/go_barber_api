@@ -1,9 +1,10 @@
 import express from 'express';
 import routes from './routes';
 
+import './database';
+
 const app = express();
 
-// eslint-disable-next-line no-shadow
 app.use(express.json());
 app.use(routes);
 
