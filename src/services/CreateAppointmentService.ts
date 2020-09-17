@@ -1,9 +1,8 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
 import { startOfHour } from 'date-fns';
 import { getCustomRepository } from 'typeorm';
-// eslint-disable-next-line no-unused-vars
 import Appointment from '../models/Appointment';
-// eslint-disable-next-line no-unused-vars
 import AppointmentsRepository from '../repositories/AppointmentsRepository';
 
 interface Request {
