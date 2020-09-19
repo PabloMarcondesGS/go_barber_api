@@ -37,7 +37,7 @@ class UpdateUserAvatarService {
                 userAvatarFilePath,
             );
 
-            if (!userAvatarFileExists) {
+            if (userAvatarFileExists) {
                 await fs.promises.unlink(userAvatarFilePath);
             }
         }
