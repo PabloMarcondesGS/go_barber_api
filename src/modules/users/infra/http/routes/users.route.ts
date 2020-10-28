@@ -1,10 +1,12 @@
 /* eslint-disable no-shadow */
 /* eslint-disable no-unused-vars */
-import { response, Router } from 'express';
+import { Router } from 'express';
 import multer from 'multer';
-import uploadConfig from '../config/upload';
-import CreateUserService from '../services/CreateUserService';
-import UpdateUserAvatarService from '../services/UpdateUserAvatarService';
+import uploadConfig from '@config/upload';
+
+import CreateUserService from '@modules/users/services/CreateUserService';
+import UpdateUserAvatarService from '@modules/users/services/UpdateUserAvatarService';
+
 import ensureAuthenticated from '../middlewares/ensureAuthenticated';
 
 const usersRouter = Router();

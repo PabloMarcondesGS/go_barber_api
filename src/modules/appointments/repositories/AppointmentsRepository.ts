@@ -1,6 +1,6 @@
 import { EntityRepository, Repository } from 'typeorm';
 
-import Appointment from '../models/Appointment';
+import Appointment from '../infra/typeorm/entities/Appointment';
 
 // Função da rota e apenas receber a requisicao, chamar outro arquivo e devolver a resposta
 @EntityRepository(Appointment)
