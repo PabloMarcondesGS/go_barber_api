@@ -1,4 +1,5 @@
 import { hash } from 'bcryptjs';
+import { injectable, inject } from 'tsyringe';
 
 import AppError from '@shared/errors/AppError';
 import IUsersRepository from '../repositories/IUsersRepository';
@@ -10,10 +11,12 @@ interface IRequest {
     email: string;
     password: string;
 }
-
+@injectable()
 class CreateUserService {
     // eslint-disable-next-line no-empty-function
-    constructor(private usersRepository: IUsersRepository) {}
+    constructor(
+        @inject('UsersRepository') private usersRepository: IUsersRepository,
+    ) {}
 
     public async execute({ name, email, password }: IRequest): Promise<User> {
         const checkoUserExists = await this.usersRepository.findbyEmail(email);

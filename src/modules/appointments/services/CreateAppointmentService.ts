@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
 import { startOfHour } from 'date-fns';
+import { injectable, inject } from 'tsyringe';
 // import { getCustomRepository } from 'typeorm';
 import AppError from '@shared/errors/AppError';
 
@@ -12,10 +13,13 @@ interface IRequest {
     provider_id: string;
     date: Date;
 }
-
+@injectable()
 class CreateAppointmentService {
     // eslint-disable-next-line no-empty-function
-    constructor(private appointmentsRepository: IAppointmentsRepository) {}
+    constructor(
+        @inject('AppointmentsRepository')
+        private appointmentsRepository: IAppointmentsRepository,
+    ) {}
 
     public async execute({
         date,

@@ -2,6 +2,7 @@
 import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 import authConfig from '@config/auth';
+import { injectable, inject } from 'tsyringe';
 
 import AppError from '@shared/errors/AppError';
 
@@ -17,14 +18,13 @@ interface IResponse {
     user: User;
     token: string;
 }
-
+@injectable()
 class AuthenticateUserService {
-    // eslint-disable-next-line no-empty-function
-    constructor(private usersRepository: IUsersRepository) {}
+    constructor(
+        @inject('UsersRepository') private usersRepository: IUsersRepository,
+    ) {}
 
-    // eslint-disable-next-line prettier/prettier
-    public async execute({ email, password}: IRequest): Promise<IResponse>{
-
+    public async execute({ email, password }: IRequest): Promise<IResponse> {
         const user = await this.usersRepository.findbyEmail(email);
 
         if (!user) {
