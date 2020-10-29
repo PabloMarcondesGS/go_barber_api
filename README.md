@@ -1,5 +1,6 @@
 # Projeto Gobaber
     -Backend do projeto go barber para gerenciamento de horarios de uma barbearia.
+    -Não há interface, para teste usar a ferramenta INSOMINIA ou alguma outra ferramenta para simular uma requisição para as rotas.
 
 ## Rodar a API
     -Necessario ter docker na maquina
@@ -11,3 +12,10 @@
     -Criação de usuarios para os barbeiros.
     -Criação de usuarios para os usuarios.
     -Agendamento de horarios.
+
+### Testes unitarios
+    -Testes criados com a ferramenta JEST
+    -Para rodar os testes apenas rodar o comando 'yarn test'
+    -Teste existentes
+        *Criar um agendamento
+        *Não deixar criar dois agendamentos na mesma data
