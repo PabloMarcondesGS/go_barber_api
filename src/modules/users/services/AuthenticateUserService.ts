@@ -1,4 +1,4 @@
-import { getRepository } from 'typeorm';
+// import { getRepository } from 'typeorm';
 import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 import authConfig from '@config/auth';
@@ -6,23 +6,26 @@ import authConfig from '@config/auth';
 import AppError from '@shared/errors/AppError';
 
 import User from '../infra/typeorm/entities/User';
+import IUsersRepository from '../repositories/IUsersRepository';
 
-interface Request {
+interface IRequest {
     email: string;
     password: string;
 }
 
-interface Response {
+interface IResponse {
     user: User;
     token: string;
 }
 
 class AuthenticateUserService {
-    // eslint-disable-next-line prettier/prettier
-    public async execute({ email, password}: Request): Promise<Response>{
-        const usersRepository = getRepository(User);
+    // eslint-disable-next-line no-empty-function
+    constructor(private usersRepository: IUsersRepository) {}
 
-        const user = await usersRepository.findOne({ where: { email } });
+    // eslint-disable-next-line prettier/prettier
+    public async execute({ email, password}: IRequest): Promise<IResponse>{
+
+        const user = await this.usersRepository.findbyEmail(email);
 
         if (!user) {
             throw new AppError('Incorrect email/password combination', 401);
