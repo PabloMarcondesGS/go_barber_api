@@ -15,7 +15,7 @@ class AppointmentsRepository implements IAppointmentsRepository {
             isEqual(appointment.date, date),
         );
 
-        return findAppointment;
+        return findAppointment || undefined;
     }
 
     public async create({
@@ -30,7 +30,7 @@ class AppointmentsRepository implements IAppointmentsRepository {
 
         this.appointments.push(appointment);
 
-        return appointment || undefined;
+        return appointment;
     }
 }
 
