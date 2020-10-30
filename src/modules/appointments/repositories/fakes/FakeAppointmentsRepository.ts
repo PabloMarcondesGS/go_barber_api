@@ -30,7 +30,7 @@ class AppointmentsRepository implements IAppointmentsRepository {
 
         this.appointments.push(appointment);
 
-        return appointment;
+        return appointment || undefined;
     }
 }
 

@@ -1,6 +1,6 @@
 # Projeto Gobaber
     -Backend do projeto go barber para gerenciamento de horarios de uma barbearia.
-    -Não há interface, para teste usar a ferramenta INSOMINIA ou alguma outra ferramenta para simular uma requisição para as rotas.
+    -Não há interface, para teste usar a ferramenta INSOMINIA ou alguma outra ferramenta que simule uma requisição as rotas.
 
 ## Rodar a API
     -Necessario ter docker na maquina
