@@ -28,12 +28,12 @@ describe('CreateAppointment', () => {
 
         const appointmentDate = new Date(2020, 4, 10, 11); // data fixada em AAAA/MM/DD/HH
 
-        createAppointment.execute({
+        await createAppointment.execute({
             date: appointmentDate,
             provider_id: '123',
         });
 
-        expect(
+        await expect(
             createAppointment.execute({
                 date: appointmentDate,
                 provider_id: '123',

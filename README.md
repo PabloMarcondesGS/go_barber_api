@@ -17,5 +17,10 @@
     -Testes criados com a ferramenta JEST
     -Para rodar os testes apenas rodar o comando 'yarn test'
     -Teste existentes
-        *Criar um agendamento
-        *Não deixar criar dois agendamentos na mesma data
+        -Criar um agendamento
+        -Não permitir criar dois agendamentos na mesma data
+        -Criar usuário
+        -Não permitir dois usuários com mesmo email
+        -Autenticação de usuário
+        -Trava de usuário invalido
+        -Trava de usuário inexistente
