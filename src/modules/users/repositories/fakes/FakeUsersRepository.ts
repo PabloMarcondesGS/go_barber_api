@@ -6,7 +6,7 @@ import User from '../../infra/typeorm/entities/User';
 
 // Função da rota e apenas receber a requisicao, chamar outro arquivo e devolver a resposta
 // @EntityRepository(Appointment)
-class UsersRepository implements IUserRepository {
+class FakeUsersRepository implements IUserRepository {
     private users: User[] = [];
 
     public async findbyId(id: string): Promise<User | undefined> {
@@ -42,4 +42,4 @@ class UsersRepository implements IUserRepository {
     }
 }
 
-export default UsersRepository;
+export default FakeUsersRepository;
