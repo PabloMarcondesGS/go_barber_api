@@ -24,3 +24,5 @@
         -Autenticação de usuário
         -Trava de usuário invalido
         -Trava de usuário inexistente
+        -Update de avatar
+        -Exclusão de avatar antes de atualizar
