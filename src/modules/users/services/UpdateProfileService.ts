@@ -11,7 +11,7 @@ interface IRequest {
     name: string;
     email: string;
     old_password?: string;
-    passsword?: string;
+    password?: string;
 }
 @injectable()
 class UpdateProfile {
@@ -26,7 +26,7 @@ class UpdateProfile {
         user_id,
         name,
         email,
-        passsword,
+        password,
         old_password,
     }: IRequest): Promise<User> {
         const user = await this.usersRepository.findbyId(user_id);
@@ -46,13 +46,13 @@ class UpdateProfile {
         user.name = name;
         user.email = email;
 
-        if (passsword && !old_password) {
+        if (password && !old_password) {
             throw new AppError(
                 'You need inform the old password to set a new password.',
             );
         }
 
-        if (passsword && old_password) {
+        if (password && old_password) {
             const checkOldPassword = await this.hashProvider.compareHash(
                 old_password,
                 user.password,
@@ -63,8 +63,8 @@ class UpdateProfile {
             }
         }
 
-        if (passsword) {
-            user.password = await this.hashProvider.generateHash(passsword);
+        if (password) {
+            user.password = await this.hashProvider.generateHash(password);
         }
 
         return this.usersRepository.save(user);
