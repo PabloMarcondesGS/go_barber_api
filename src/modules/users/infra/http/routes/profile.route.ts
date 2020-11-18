@@ -9,6 +9,7 @@ const profileCrontroller = new ProfileController();
 
 profileRouter.use(ensureAuthenticated);
 
+profileRouter.get('/', profileCrontroller.show);
 profileRouter.put('/', profileCrontroller.update);
 
 export default profileRouter;
