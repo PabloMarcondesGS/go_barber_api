@@ -4,15 +4,16 @@ import { container } from 'tsyringe';
 import ListProvidersService from '@modules/appointments/services/ListProviderService';
 
 export default class ProvidersController {
+
     public async index(
         request: Request,
         response: Response,
     ): Promise<Response> {
         const user_id = request.user.id;
 
-        const createAppointment = container.resolve(ListProvidersService);
+        const listProviders = container.resolve(ListProvidersService);
 
-        const providers = await createAppointment.execute({
+        const providers = await listProviders.execute({
             user_id,
         });
 
