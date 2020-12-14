@@ -23,8 +23,8 @@ describe('UpdateUserAvatar', () => {
             user_id: user.id,
         });
 
-        expect(updateUser.name).toBe('John Trê');
-        expect(updateUser.email).toBe('jhontre@example.com');
+        expect(updateUser.name).toBe('John Doe');
+        expect(updateUser.email).toBe('johndoe@example.com');
     });
 
     it('should not be able show the profile from  a non-existing user', async () => {
