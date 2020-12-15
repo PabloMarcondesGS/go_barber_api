@@ -5,7 +5,7 @@ import ListProfileService from './ListProviderService';
 let fakeUsersRepository: FakeUsersRepository;
 let ListProviders: ListProfileService;
 
-describe('UpdateUserAvatar', () => {
+describe('ListProvider', () => {
     beforeEach(() => {
         fakeUsersRepository = new FakeUsersRepository();
 

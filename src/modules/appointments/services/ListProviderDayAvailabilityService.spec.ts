@@ -4,7 +4,7 @@ import ListProviderDayAvailiabilityService from './ListProviderDayAvailabilitySe
 let fakeAppointmentsRepository: FakeAppointmentsRepository;
 let listProviderDayAvailiability: ListProviderDayAvailiabilityService;
 
-describe('UpdateUserAvatar', () => {
+describe('ListProviderDayAvailability', () => {
     beforeEach(() => {
         fakeAppointmentsRepository = new FakeAppointmentsRepository();
 
